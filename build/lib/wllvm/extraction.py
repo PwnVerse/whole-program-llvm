@@ -241,7 +241,7 @@ def executeLinker(linkCmd):
     return exitCode
 
 def incrementallyLinkFiles(pArgs, fileNames):
-    linkCmd = [pArgs.llvmLinker, '-v', '--only-needed'] if pArgs.verboseFlag else [pArgs.llvmLinker, '--only-needed']
+    linkCmd = [pArgs.llvmLinker, '-v'] if pArgs.verboseFlag else [pArgs.llvmLinker]
 
     linkCmd.append(f'-o={pArgs.outputFile}')
 
@@ -268,7 +268,7 @@ def incrementallyLinkFiles(pArgs, fileNames):
 
 
 def linkFiles(pArgs, fileNames):
-    linkCmd = [pArgs.llvmLinker, '-v', '--only-needed'] if pArgs.verboseFlag else [pArgs.llvmLinker, '--only-needed']
+    linkCmd = [pArgs.llvmLinker, '-v'] if pArgs.verboseFlag else [pArgs.llvmLinker]
 
     linkCmd.append(f'-o={pArgs.outputFile}')
 
